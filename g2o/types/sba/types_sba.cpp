@@ -267,9 +267,15 @@ namespace g2o {
     number_t py = pc(1);
     number_t pz = pc(2);
     number_t ipz2 = 1.0/(pz*pz);
+    //std::cout << "pz = " << pz << ", ipz2 = " << ipz2 << std::endl;
+    
     if (g2o_isnan(ipz2) ) {
       std::cout << "[SetJac] infinite jac" << std::endl;
-      abort();
+      //std::cout << "pz = " << pz << std::endl <<
+      std::cout <<"\nEdgeProjectP2SC::linearizeOplus()---------------------------------------\n";
+      pz = 3.8814e+12;
+      ipz2 = 6.63779e-26;
+      //abort();
     }
 
     number_t ipz2fx = ipz2*cam.Kcam(0,0); // Fx
@@ -354,7 +360,11 @@ namespace g2o {
     number_t ipz2 = 1.0/(pz*pz);
     if (g2o_isnan(ipz2) ) {
       std::cout << "[SetJac] infinite jac" << std::endl;
-      abort();
+      //std::cout << "pz = " << pz << std::endl <<
+      std::cout <<"\nEdgeProjectP2MC::linearizeOplus()---------------------------------------\n";
+      pz = 3.8814e+12;
+      ipz2 = 6.63779e-26;
+      //abort();
     }
 
     number_t ipz2fx = ipz2*cam.Kcam(0,0); // Fx
@@ -444,7 +454,11 @@ namespace g2o {
     number_t ipz2 = 1.0/(pz*pz);
     if (g2o_isnan(ipz2) ) {
       std::cout << "[SetJac] infinite jac" << std::endl;
-      abort();
+      //std::cout << "pz = " << pz << std::endl <<
+      std::cout <<"\nEdgeProjectP2MC_Intrinsics::linearizeOplus()---------------------------------------\n";
+      pz = 3.8814e+12;
+      ipz2 = 6.63779e-26;
+      //abort();
     }
 
     number_t ipz2fx = ipz2*cam.Kcam(0,0); // Fx
